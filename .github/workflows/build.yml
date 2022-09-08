@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - master # or the name of your main branch
+      - main # or the name of your main branch
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
       - name: Cache Maven packages
         uses: actions/cache@v1
-        with: 
+        with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
